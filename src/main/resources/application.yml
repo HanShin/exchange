@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: debug
+
+server:
+  port: 8080
+
+currency-layer:
+  base-url: 'http://api.currencylayer.com'
+  access-key: 'f63c0aa68bbe6ae333c6b27612503a46'
