@@ -30,9 +30,10 @@ public class CurrencyCalculateServiceImpl implements CurrencyCalculateService {
 
 
         CurrencyCalculateResponse currencyCalculateResponse = CurrencyCalculateResponse.builder()
-                .USDJPY(quotes.getUSDJPY().multiply(BigDecimal.valueOf(USD)))
-                .USDKRW(quotes.getUSDKRW().multiply(BigDecimal.valueOf(USD)))
-                .USDPHP(quotes.getUSDPHP().multiply(BigDecimal.valueOf(USD)))
+                .currencyUSDJPY(quotes.getUSDJPY())
+                .currencyUSDKRW(quotes.getUSDKRW())
+                .currencyUSDPHP(quotes.getUSDPHP())
+                .USD(USD)
                 .build();
 
         return currencyCalculateResponse;

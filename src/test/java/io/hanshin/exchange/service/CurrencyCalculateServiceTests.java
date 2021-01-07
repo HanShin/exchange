@@ -28,6 +28,9 @@ public class CurrencyCalculateServiceTests {
         assertThat(calculateResponse.getUSDPHP(), is(notNullValue()));
         assertThat(calculateResponse.getUSDKRW(), is(notNullValue()));
         assertThat(calculateResponse.getUSDJPY(), is(notNullValue()));
+        assertThat(calculateResponse.getCurrencyUSDJPY(), is(notNullValue()));
+        assertThat(calculateResponse.getCurrencyUSDKRW(), is(notNullValue()));
+        assertThat(calculateResponse.getCurrencyUSDPHP(), is(notNullValue()));
     }
 
 }

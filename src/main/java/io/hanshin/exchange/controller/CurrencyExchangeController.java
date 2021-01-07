@@ -1,6 +1,5 @@
 package io.hanshin.exchange.controller;
 
-import io.hanshin.exchange.exception.CurrencyExchangeException;
 import io.hanshin.exchange.model.CurrencyCalculateResponse;
 import io.hanshin.exchange.service.CurrencyCalculateService;
 import lombok.RequiredArgsConstructor;
@@ -24,10 +23,16 @@ public class CurrencyExchangeController {
 
     @GetMapping("/currency-calculate")
     @ResponseBody
-    public CurrencyCalculateResponse getCurrencyCalculate(@RequestParam("USD")@Min(0) @Max(10000) Integer  USD) throws CurrencyExchangeException {
+    public CurrencyCalculateResponse getCurrencyCalculate(@RequestParam("USD")@Min(0) @Max(10000) Integer USD) throws Exception {
         CurrencyCalculateResponse currencyCalculateResponse = currencyCalculateService.currencyCalculate(USD);
         return currencyCalculateResponse;
+    }
 
+    @GetMapping("/currency")
+    @ResponseBody
+    public CurrencyCalculateResponse getCurrency() throws Exception {
+        CurrencyCalculateResponse currencyCalculateResponse = currencyCalculateService.currencyCalculate(1);
+        return currencyCalculateResponse;
     }
 
 }
